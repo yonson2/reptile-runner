@@ -1,0 +1,22 @@
+[package]
+name = "reptile-runner"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.97"
+axum = { version = "0.8.1", features = ["ws", "http1"] }
+axum-server = { version = "0.7.2", features = ["tls-rustls"] }
+tokio = { version = "1.44.1", features = ["rt-multi-thread"] }
+tracing = { version = "0.1.41", features = ["release_max_level_debug"] }
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+wasm-bindgen-cli-support = "0.2.100"
+tower-http = { version = "0.5", features = ["compression-full", "fs", "set-header", "trace"] }
+tower = "0.4"
+http = "1.x"
+rcgen = { version = "0.13", default-features = false, features = ["ring"] }
+
+
+directories = "6"
+fastrand = "2.x"
+axum-server-dual-protocol = "0.7.0"
