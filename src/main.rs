@@ -13,7 +13,7 @@ fn main() -> Result<(), anyhow::Error> {
     let address = std::env::var("REPTILE_RUNNER_ADDR").unwrap_or_else(|_| "127.0.0.1".to_string());
 
     let html_source = Cow::Borrowed(include_str!("./static/index.html"));
-    let port = port();
+    let port = server::PORT;
 
     let directory = PathBuf::from_str(server::DIRECTORY).expect("Unpopulated git submodule");
     let wasm_file = PathBuf::from_str(server::WASM_FILE).expect("Invalid build directory");
@@ -32,10 +32,4 @@ fn main() -> Result<(), anyhow::Error> {
     rt.block_on(server::run_server(options, output))?;
 
     Ok(())
-}
-
-fn port() -> u16 {
-    let port = server::PORT;
-
-    pick_port::pick_free_port(port, 10).expect("free ports")
 }
