@@ -2,11 +2,9 @@ mod server;
 mod wasm_bindgen;
 
 pub type Result<T, E = anyhow::Error> = std::result::Result<T, E>;
-use std::{borrow::Cow, path::PathBuf, process::Command, str::FromStr};
+use std::{borrow::Cow, path::PathBuf, str::FromStr};
 
 use server::*;
-use tracing::info;
-use tracing_subscriber::EnvFilter;
 
 use crate::server::Options;
 

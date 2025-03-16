@@ -22,8 +22,8 @@ use tower_http::{compression::CompressionLayer, set_header::SetResponseHeaderLay
 
 use crate::wasm_bindgen::WasmBindgenOutput;
 
-pub const DIRECTORY: &str = "reptile/";
-pub const WASM_FILE: &str = "reptile/target/wasm32-unknown-unknown/wasm-release/reptile.wasm";
+pub const DIRECTORY: &str = ".";
+pub const WASM_FILE: &str = "reptile.wasm";
 pub const PORT: u16 = 1337;
 
 #[derive(Debug)]
